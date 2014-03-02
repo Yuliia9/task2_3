@@ -1,44 +1,40 @@
-﻿========================================================================
-    КОНСОЛЬНОЕ ПРИЛОЖЕНИЕ. Обзор проекта task2_3
+========================================================================
+    CONSOLE APPLICATION : task2_3 Project Overview
 ========================================================================
 
-Это приложение task2_3 создано автоматически с помощью мастера 
-приложений.
+AppWizard has created this task2_3 application for you.
 
-Здесь приведены краткие сведения о содержимом каждого из файлов, использованных 
-при создании приложения task2_3.
+This file contains a summary of what you will find in each of the files that
+make up your task2_3 application.
 
 
 task2_3.vcxproj
-    Основной файл проекта VC++, автоматически создаваемый с помощью мастера 
-    приложений.
-    Он содержит данные о версии языка Visual C++, использованной для создания 
-    файла, а также сведения о платформах, настройках и свойствах проекта, 
-    выбранных с помощью мастера приложений.
+    This is the main project file for VC++ projects generated using an Application Wizard.
+    It contains information about the version of Visual C++ that generated the file, and
+    information about the platforms, configurations, and project features selected with the
+    Application Wizard.
 
 task2_3.vcxproj.filters
-    Это файл фильтров для проектов VC++, созданный с помощью мастера 
-    приложений. 
-    Он содержит сведения о сопоставлениях между файлами в вашем проекте и 
-    фильтрами. Эти сопоставления используются в среде IDE для группировки 
-    файлов с одинаковыми расширениями в одном узле (например файлы ".cpp" 
-    сопоставляются с фильтром "Исходные файлы").
+    This is the filters file for VC++ projects generated using an Application Wizard. 
+    It contains information about the association between the files in your project 
+    and the filters. This association is used in the IDE to show grouping of files with
+    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
+    "Source Files" filter).
 
 task2_3.cpp
-    Это основной исходный файл приложения.
+    This is the main application source file.
 
 /////////////////////////////////////////////////////////////////////////////
-Другие стандартные файлы:
+Other standard files:
 
 StdAfx.h, StdAfx.cpp
-    Эти файлы используются для построения файла предкомпилированного заголовка 
-    (PCH) с именем task2_3.pch и файла предкомпилированных типов 
-    с именем StdAfx.obj.
+    These files are used to build a precompiled header (PCH) file
+    named task2_3.pch and a precompiled types file named StdAfx.obj.
 
 /////////////////////////////////////////////////////////////////////////////
-Общие замечания:
+Other notes:
 
-С помощью комментариев «TODO:» в мастере приложений обозначаются фрагменты 
-исходного кода, которые необходимо дополнить или изменить.
+AppWizard uses "TODO:" comments to indicate parts of the source code you
+should add to or customize.
 
 /////////////////////////////////////////////////////////////////////////////
