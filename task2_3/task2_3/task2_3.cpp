@@ -1,15 +1,31 @@
+/**
+* @file		task2_3.cpp
+* @brief	Program creates database for holding informations about cars, 
+			such as model, number, production year and mileage
+			and estimates the average mileage for different car's models
+*
+* Copyright 2014 by Yuliia Lyubchik
+*
+* This software is the confidential and proprietary information
+* of Yuliia Lyubchik. ("Confidential Information").  You
+* shall not disclose such Confidential Information and shall use
+* it only with permission from Yuliia.
+*/
+
+
 #include "stdafx.h"
+#include "task2_3.h" /*defines data types and prototypes of used in this file functions*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "task2_3.h"
+
 
 const unsigned char ERROR = 0;
 const unsigned char SUCCESS = 1;
 const unsigned char MAIN_SUCCES = 0;
 
 
-/*present year for checking year of production cars*/
+/*present year for checking reasonable production year of cars*/
 const int PR_YEAR = 2014;
 
 
@@ -17,6 +33,7 @@ const int PR_YEAR = 2014;
 int main()
 {
 	Interface();
+
 	unsigned int num;
 	int retCode;
 	do 
@@ -26,7 +43,8 @@ int main()
 		fflush(stdin); // Flush the input buffer
 
 	} while (Type_checking(retCode, (int) num) == ERROR);
-	printf("List will consist of %u cars.\n", num);
+
+	printf("Database will consist of %u car(s).\n", num);
 
 	struct car* cars = (car*)malloc(num* sizeof(car));
 	if (cars == NULL)
@@ -35,16 +53,20 @@ int main()
 		return (int) ERROR;
 	}
 
+
 	retCode = Input(cars, num);
 	if (retCode == ERROR)
 	{
+		printf("Sorry, error occurs while trying to input data. \n");
 		free(cars);
 		return (int)ERROR;
 	}
 
+
 	retCode = Sort_cars(cars, num);
 	if (retCode == ERROR)
 	{
+		printf("Sorry, error occurs while trying to sort cars database. \n");
 		free(cars);
 		return (int)ERROR;
 	}
@@ -53,6 +75,7 @@ int main()
 	retCode = Output(cars, num);
 	if (retCode == ERROR)
 	{
+		printf("Sorry, error occurs while trying to display data. \n");
 		free(cars);
 		return (int)ERROR;
 	}
@@ -61,6 +84,7 @@ int main()
 	retCode = Get_mileage(cars, num);
 	if (retCode == ERROR)
 	{
+		printf("Sorry, error occurs while trying to estimate average mileage. \n");
 		free(cars);
 		return (int)ERROR;
 	}
@@ -69,14 +93,20 @@ int main()
 	system("pause");
 	return (int) MAIN_SUCCES;
 }
+
+
 void Interface()
 {
+	printf("--------------------------------------------------------------------\n");
 	printf("Hi! Please welcome to your personal cars information handler. \n");
 	printf("You can store information about model of cars, it's production year,\n number and mileage. \n");
 	printf("Program will show you the list from oldest to newest cars \n");
 	printf("and will estimate for each model of cars average mileage.\n");
 	printf("Program made by Yuliia Lyubchik;)\n");
+	printf("--------------------------------------------------------------------\n\n");
 }
+
+
 
 unsigned char  Type_checking(unsigned char retCode, int val)
 {
@@ -94,11 +124,13 @@ unsigned char  Type_checking(unsigned char retCode, int val)
 }
 
 
+
+
 unsigned char Input(struct car* cars, unsigned int num)
 {
 	if (cars == NULL)
 	{
-		printf("Error occurs trying to get access to memory.\n");
+		printf("Error occurs while trying to get access to memory.\n");
 		return ERROR;
 	}
 	unsigned int i;
@@ -154,7 +186,8 @@ unsigned char Input(struct car* cars, unsigned int num)
 }
 
 
-unsigned char Sort_cars(struct car* p, int num)
+
+unsigned char Sort_cars(struct car* p, unsigned int num)
 {
 	if (p == NULL)
 	{
@@ -178,6 +211,8 @@ unsigned char Sort_cars(struct car* p, int num)
 	return SUCCESS;
 }
 
+
+
 unsigned char Output(const struct car* cars, unsigned int num)
 {
 	if (cars == NULL)
@@ -195,6 +230,8 @@ unsigned char Output(const struct car* cars, unsigned int num)
 	}
 	return SUCCESS;
 }
+
+
 
 unsigned char Get_mileage(struct car* cars, unsigned int num)
 {
@@ -227,6 +264,8 @@ unsigned char Get_mileage(struct car* cars, unsigned int num)
 		}
 	}
 }
+
+
 
 unsigned char Is_digit(const char* pstr)
 {
